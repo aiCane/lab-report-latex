@@ -1,10 +1,43 @@
-\pretitle{\begin{center}\LARGE}
-\posttitle{\end{center}}
-\preauthor{\begin{center}\large}
-\postauthor{\end{center}}
-\predate{\begin{center}\large}
-\postdate{\end{center}}
+\setlength{\headheight}{42pt}
 
-\pagestyle{fancy}
+\fancypagestyle{firstpagestyle}{
+  \fancyhf{}
 
-\setlength{\headheight}{14.5pt}
+  \fancyhead[C]{
+    \begin{tabular}{c}
+      \Large \CJKfontspec{Kai} 大学 \\
+      \small University
+    \end{tabular}
+  }
+
+  \fancyhead[R]{
+    \begin{tabular}{c}
+      \footnotesize 年 月 \\
+      \footnotesize Month Year
+    \end{tabular}
+  }
+
+  \renewcommand{\headrule}{
+		\hrule height 0.8pt
+		\vspace{0.2em}
+		\hrule height 2.8pt
+	}
+}
+
+\fancypagestyle{mystyle}{
+  \fancyhf{}
+  \fancyhead[L]{\small \today}
+  \fancyhead[C]{\small \theauthor:\thetitle}
+  \fancyhead[R]{\small \thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
+
+\setlength{\droptitle}{-42pt}
+
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries}
+  {\Chinese{section}、}{0em}{}
+
+\addbibresource[location=local]{bibliography.bib}
+
+\renewcommand{\bibfont}{\zihao{-5}}

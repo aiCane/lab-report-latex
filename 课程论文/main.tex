@@ -9,18 +9,20 @@
 \begin{document}
 
 \maketitle
+\thispagestyle{firstpagestyle}
 
 \input{Abstract/摘要}
 
-\clearpage
+\pagestyle{mystyle}
 
-% \input{Sections/introduction}
+\input{Sections/引言}
+\input{Sections/结论}
 
-\clearpage
 \appendix
+\cite{Peebles2001-100-100}
 
-\input{Sections/参考文献}
+\printbibliography[heading=bibliography,title=参考文献]
 
-\input{Sections/致谢}
+% \input{Abstract/abstract}
 
 \end{document}
