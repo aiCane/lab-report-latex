@@ -3,26 +3,7 @@
 
 \RaggedRight
 
-\lstset{
-  basicstyle=\ttfamily\footnotesize,
-  keywordstyle=\bfseries\color{NavyBlue},
-  numberstyle=\scriptsize\color{gray},
-  numbers=left,
-  frame=single,
-  framesep=1em,
-  breaklines=true,
-  tabsize=2,
-  showspaces=false,
-  showstringspaces=false,
-  commentstyle=\itshape\color{PineGreen},
-  stringstyle=\bfseries\color{PineGreen!90!black},
-  columns=flexible,
-  numbersep=2em,
-  emph={data,print,input,len,str,println,write,attach,attached,set_label,set_title,set_thetamin,set_thetamax,
-  set_rticks,set_rlabel_position,colorbar,detach,split,append,to_excel},
-  emphstyle=\bfseries\color{Rhodamine},
-  literate={°}{{\textdegree}}1
-}
+\setminted{tabsize=2}
 
 %% chapter/classic text style
 \fancypagestyle{chapter}{
@@ -69,7 +50,7 @@
   colorlinks = true,
   linkcolor = blue, % normal internal links, like ref, can be black tbh
   citecolor = blue, % bibliographical links
-  urlcolor = blue, % linked urls
+  urlcolor = blue,  % linked urls
   filecolor = black % url which open local files
 }
 
