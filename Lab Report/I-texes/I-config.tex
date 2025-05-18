@@ -1,23 +1,76 @@
-\setmainfont{Times New Roman}
-
 \setlength{\headheight}{14.5pt}
 \setlength{\parindent}{0pt}
-
-\pagestyle{fancy}
 
 \RaggedRight
 
 \lstset{
-  language=C,
-  basicstyle=\ttfamily\small,
-  keywordstyle=\color{blue},
-  commentstyle=\color{gray},
-  stringstyle=\color{olive},
-  numberstyle=\color{orange},
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries\color{NavyBlue},
+  numberstyle=\scriptsize\color{gray},
   numbers=left,
   frame=single,
+  framesep=1em,
   breaklines=true,
   tabsize=2,
   showspaces=false,
-  showstringspaces=false
+  showstringspaces=false,
+  commentstyle=\itshape\color{PineGreen},
+  stringstyle=\bfseries\color{PineGreen!90!black},
+  columns=flexible,
+  numbersep=2em,
+  emph={data,print,input,len,str,println,write,attach,attached,set_label,set_title,set_thetamin,set_thetamax,
+  set_rticks,set_rlabel_position,colorbar,detach,split,append,to_excel},
+  emphstyle=\bfseries\color{Rhodamine},
+  literate={°}{{\textdegree}}1
 }
+
+%% chapter/classic text style
+\fancypagestyle{chapter}{
+  %% title of the chapter, left header, no uppercase, 10 pt, italics, no bold
+  \fancyhead[L]{Group \# 15}
+  \fancyhead[R]{Page~\thepage~of~\pageref{LastPage}}
+
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \pagenumbering{arabic}
+}
+
+%% define length and scaling for baseline
+\newcommand{\headingBaseline}{12}
+\newcommand{\headingBaselineDiv}{10}
+\newlength{\sectionFontSize}
+\newlength{\subsectionFontSize}
+\newlength{\sectionBaseline}
+\newlength{\subsectionBaseline}
+
+%% change those value if you want to change the chapter/section/subsection font size
+\setlength{\sectionFontSize}{12pt}
+\setlength{\subsectionFontSize}{12pt}
+
+%% automatic computation for baseline, rule of thumb is 1.2
+\setlength{\sectionBaseline}{ \sectionFontSize * \headingBaseline / \headingBaselineDiv}
+\setlength{\subsectionBaseline}{ \subsectionFontSize * \headingBaseline / \headingBaselineDiv}
+
+%% Section, 12-point
+\titleformat{\section}[hang]
+    {\normalfont\bfseries\fontsize{\sectionFontSize}{\sectionBaseline}\selectfont}{\thesection}{5pt}{}
+%% left|above|below
+\titlespacing{\section}{0pt}{25pt}{15pt}
+
+%% Subsection, 12-point, italic
+\titleformat{\subsection}[hang]
+    {\normalfont\bfseries\itshape\fontsize{\subsectionFontSize}{\subsectionBaseline}\selectfont}{\thesubsection}{5pt}{}
+%% left|above|below
+\titlespacing{\subsection}{0pt}{20pt}{10pt}
+
+%% hyperref setup
+\hypersetup{
+  colorlinks = true,
+  linkcolor = blue, % normal internal links, like ref, can be black tbh
+  citecolor = blue, % bibliographical links
+  urlcolor = blue, % linked urls
+  filecolor = black % url which open local files
+}
+
+\setstretch{1.1}

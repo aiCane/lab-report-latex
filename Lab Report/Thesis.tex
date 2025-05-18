@@ -1,5 +1,4 @@
 %! Author = yilin
-%! Date = 2025/5/1
 
 \documentclass[12pt,a4paper]{article}
 
@@ -9,9 +8,12 @@
 
 \begin{document}
 
-\maketitle
+\pagestyle{empty}
+\input{Preliminaries/titlepage}
+\clearpage
 
-\input{Abstract/abstract}
+\pagestyle{chapter}
+% \input{Preliminaries/abstract}
 
 \input{Sections/introduction}
 \input{Sections/background}
@@ -22,8 +24,7 @@
 \appendix
 \clearpage
 
-\input{Sections/contribution}
-
-\input{Sections/appendix}
+\input{Appendices/contribution}
+\input{Appendices/source_code}
 
 \end{document}
