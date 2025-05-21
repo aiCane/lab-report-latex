@@ -1,5 +1,19 @@
 # lab-report-latex
 
-* It's a latex structure for OUC-HW robotics lab report.
-  (Uses [GitHub](https://github.com/jackred/Heriot_Watt_Thesis_Template) Thesis)
-* 和一个课程论文的框架
+---
+
+## Lab Report
+It's a latex structure for OUC-HW robotics lab report
+(Uses [GitHub](https://github.com/jackred/Heriot_Watt_Thesis_Template) Thesis).
+
+---
+
+## MACS letter
+Uses Heriot-Watt MACS letter template
+(url: [Overleaf](https://cn.overleaf.com/latex/templates/heriot-watt-macs-letter-template/rshvrwfrmxxg))
+by Oliver Lemon.
+
+---
+
+## 课程论文
+一个课程论文的框架，模仿期刊论文格式。
