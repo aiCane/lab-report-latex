@@ -1,0 +1,69 @@
+\documentclass[a4paper]{letter}
+%%%% choose one of the following 4 lines to set colour and/or  date style,
+\usepackage[myukdate,colour]{ilab-letter} % Day, num Month year, and colour (use lp2)
+
+\addtolength{\topmargin}{2cm}
+%\usepackage[]{leedsletter} % Black-and-white, with US style date Month num, year
+%\usepackage[myukdate]{leedsletter}
+%\usepackage[colour]{leedsletter}
+%%%% end
+\department{{\bf School of Mathematical and Computer Sciences}\\[26pt]
+Heriot-Watt University\\
+Edinburgh$\;$ EH14 4AS $\;$ UK\\[12pt]
+%%%% edit the following three lines to suit you.  If you add a line, then 38pt -> 26pt above
+~~ +44 (0)$\,$131  451 XXXX\\
+%F~~ +44 (0)$\,$113 343 5090\\
+~~ XXXXX@hw.ac.uk\\
+~~ www.macs.hw.ac.uk/XXXXX}
+%%%% end
+
+\alignit{30pt} %%  tweaking parameter - probably no need to change.
+
+
+%%%  need to edit  user info
+\signature{your signature here\\[5pt]
+your title here}
+%\\[15pt]
+%Heriot-Watt University\\[5pt]
+%Edinburgh }
+% end personal details
+%%%%%%%%%%%%%%%%%%%%%% a bove this line is sender specific %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% and probably only needs edited once %%%%%%%%%%%%
+%%% what follows is letter specific
+
+
+% the next line is specific to this letter, and may be used for "short" letters
+
+\skipit{1}  % this amount (default = 1.7) increases 2 gaps: address-date-opening
+
+\begin{document}
+\begin{letter}
+%{Address line 1\\
+%Address line 2\\
+%Address line 3\\
+%Address line 4}
+
+
+%% if this is a ``short'' or long address, then alter \skipit above
+
+
+ \vspace{-4cm}
+%\opening{To whom it may concern,}
+
+\opening{ }
+
+\medskip
+\centerline{\bf Letter of reference for   XXXXX}
+% \\
+%in support
+%of a research degree in Computer Science/ Cognitive Conversational
+%Interfaces.}
+\medskip
+
+
+
+body of letter here
+
+\closing{Yours sincerely,}
+\end{letter}
+\end{document}
