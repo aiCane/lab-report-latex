@@ -1,10 +1,10 @@
 %! Author = yilin
 
-\documentclass[12pt]{article}
+\documentclass{article}
 
 \input{I-texes/I-packages}
-\input{I-texes/I-config}
 \input{I-texes/I-info}
+\input{I-texes/I-config}
 
 \begin{document}
 
@@ -13,16 +13,15 @@
 
 \input{Abstract/摘要}
 
-\pagestyle{mystyle}
+\pagestyle{headings}
 
 \input{Sections/引言}
 \input{Sections/结论}
 
 \appendix
-\cite{Peebles2001-100-100}
 
-\printbibliography[heading=bibliography,title=参考文献]
+\printbibliography[heading=bibliography,title=参考文献\cite{Peebles2001-100-100}]
 
-% \input{Preliminaries/abstract}
+% \input{Abstract/abstract}
 
 \end{document}

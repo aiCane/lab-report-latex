@@ -1,19 +1,34 @@
 \setlength{\headheight}{42pt}
 
+\title{
+  {\LARGE \textbf{\myPaperTitle}} \\
+  {\large \myShortTitle}
+  \vspace{-0.75em}
+}
+\author{
+  {\CJKfontspec{Kai} \authorName}\thanks{
+    \textbf{作者简介}:\authorDiscription。
+    \textbf{E-mail}:\authorEmail。
+  } \\
+  {\footnotesize\CJKfontspec{Kai} \authorPlace}
+}
+\date{}
+
+
 \fancypagestyle{firstpagestyle}{
   \fancyhf{}
 
   \fancyhead[C]{
     \begin{tabular}{c}
-      \Large \CJKfontspec{Kai} 大学 \\
-      \small University
+      \Large \CJKfontspec{Kai} \universityZhcn \\
+      \small \universityEnus
     \end{tabular}
   }
 
   \fancyhead[R]{
     \begin{tabular}{c}
-      \footnotesize 年 月 \\
-      \footnotesize Month Year
+      \footnotesize \yearDate~\monthDateZhcn \\
+      \footnotesize \monthDateEnus~\yearDate
     \end{tabular}
   }
 
@@ -24,19 +39,23 @@
 	}
 }
 
-\fancypagestyle{mystyle}{
-  \fancyhf{}
-  \fancyhead[L]{\small \today}
-  \fancyhead[C]{\small \theauthor:\thetitle}
-  \fancyhead[R]{\small \thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-}
+%% 仿部分高校期刊
+% \fancypagestyle{mystyle}{
+%   \fancyhf{}
+%   \fancyhead[L]{\small \yearDate~\monthDateZhcn}
+%   \fancyhead[C]{\small \authorName:\myPaperTitle}
+%   \fancyhead[R]{\small \thepage}
+%   \renewcommand{\headrulewidth}{0.4pt}
+% }
 
 \setlength{\droptitle}{-42pt}
 
 \titleformat{\section}
   {\normalfont\normalsize\bfseries}
   {\Chinese{section}、}{0em}{}
+\titleformat{\subsection}
+  {\CJKfontspec{Kai}\normalsize\bfseries}
+  {\CJKfontspec{Kai}\bfseries\thesubsection}{0em}{}
 
 \addbibresource[location=local]{bibliography.bib}
 
