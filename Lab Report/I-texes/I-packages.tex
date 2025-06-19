@@ -1,31 +1,33 @@
-\usepackage[
-  export
-]{adjustbox} % 提供图形调整和导出选项
-\usepackage[
-  top=2cm,
-  bottom=2cm
-]{geometry}  % 设置页面边距
-\usepackage[
-  T1
-]{fontenc}   % font
-\usepackage[
-  dvipsnames, table
-]{xcolor}    % 支持颜色定义，特别是表格和预定义颜色
+\usepackage[acronym,nonumberlist]{glossaries} % https://www.overleaf.com/learn/latex/Glossaries
+\usepackage[export]{adjustbox}  % 提供图形调整和导出选项
+\usepackage[defernumbers=true, sorting=none]{biblatex}
+%% if we need simple page style
+% \usepackage[margins=2cm,left=4cm]{geometry} % print
+\usepackage[T1]{fontenc} % font
+\usepackage[dvipsnames,table]{xcolor} % 支持颜色定义，特别是表格和预定义颜色
+\usepackage[english]{babel} % 启用英语断字规则
 % \usepackage{subcaption} % 子图标题支持
+% \usepackage{microtype}  % better font
 \usepackage{fancyhdr}   % layout
-\usepackage{graphicx}   % include graphics
+% \usepackage{graphicx}   % include graphics
 \usepackage{hyperref}   % 超链接和PDF书签 https://ctan.org/pkg/hyperref
 \usepackage{lastpage}   % 引用最后一页
-\usepackage{makecell}   % 表格单元格定制
+% \usepackage{listings}   % 代码列表环境
+% \usepackage{makecell}   % 表格单元格定制
 \usepackage{mathptmx}   % looks like times new roman
 \usepackage{mfirstuc}   % 首字母大写处理
 \usepackage{ragged2e}   % 改进的文本对齐
-\usepackage{setspace}   % spacing
-\usepackage{tabularx}   % 自动调整宽度的表格
+\usepackage{setspace}   % spacing, sets line space, stretch
+% \usepackage{tabularx}   % 自动调整宽度的表格
 \usepackage{titlesec}   % 自定义章节标题
 \usepackage{amsmath}    % 高级数学公式
 \usepackage{courier}    % 等宽字体
+\usepackage{fvextra}    % minted auto next line
+%% must loaded after fvextra
+\usepackage{csquotes}   % suggest, when using ``babel'' and biblatex
+% \usepackage{minitoc}    % enable ``\minitoc''
+% \usepackage{parskip}    % global ``\noindent'' and auto ``\parskip''
 \usepackage{slantsc}    % 斜体小型大写字母
 \usepackage{minted}     % 更现代的代码排版
-\usepackage{float}      % 改进的浮动体控制
+% \usepackage{float}      % 改进的浮动体控制
 \usepackage{calc}       % 长度计算 http://ctan.org/pkg/calc

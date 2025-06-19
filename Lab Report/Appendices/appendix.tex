@@ -1,0 +1,30 @@
+%% Appendices, labelled A, B etc., should be treated as additional chapters and should normally follow the main text.
+%% Appendices may consist of supporting material of considerable length or of
+%% lists, documents, commentaries, tables or other evidence that if included in the main text, would interrupt its flow.
+%% The style of appendices must be consistent with the style of the main text.
+%% Long appendices may be divided into sections, labelled as Appendix A.1 etc., with
+%% corresponding subsection numbering, which must be entered in the table of contents.
+%% Alternatively, short appendices may be attached to individual chapters,
+%% as an extra section with a heading of style 3.7 Appendix.
+
+\documentclass[../main]{subfiles}
+\begin{document}
+
+\chapter{Contribution Statement}
+\label{ch:contribution-statement}
+
+Appendices, labelled A, B etc., should be treated as additional chapters and should normally follow the main text. Appendices may consist of supporting material of considerable length or of lists, documents, commentaries, tables or other evidence that if included in the main text, would interrupt its flow. The style of appendices must be consistent with the style of the main text. Long appendices may be divided into sections, labelled as Appendix A.1 etc., with corresponding subsection numbering, which must be entered in the table of contents. Alternatively, short appendices may be attached to individual chapters, as an extra section with a heading of style 3.7 Appendix.
+
+\chapter{Source Code}
+\label{ch:source-code}
+
+%% enable package ``listings''
+%\begin{lstlisting}[language=C++]
+%
+%\end{lstlisting}
+
+\section{example.py}
+
+\inputminted{py}{src/example.py}
+
+\end{document}

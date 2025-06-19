@@ -1,15 +1,45 @@
-\setlength{\headheight}{14.5pt}
-\setlength{\parindent}{0pt}
+%% prefer than direct use in usepackage geometry
+%% A4 layout in point is % 595x842
 
-\RaggedRight
+%% default value
+\setlength{\hoffset}{0pt}
+\setlength{\voffset}{0pt}
 
-\setminted{tabsize=2}
+%% height
+%% 72 - 60 + 20 + 25 = 57
+\setlength{\topmargin}{-60pt}
+\setlength{\headheight}{20pt}
+\setlength{\headsep}{25pt}
+\setlength{\footskip}{30pt}
+
+%% width
+%% 72 + 32 + 10 = 114pt = 40mm
+\setlength{\oddsidemargin}{-6pt}
+\setlength{\evensidemargin}{-6pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+
+%% size text
+\setlength{\textheight}{728pt} % 842 - 60 - 20 - 25 - 30 = 707?
+\setlength{\textwidth}{464pt}
+
+%% if you need global ``\noindent''
+%\setlength{\parindent}{0pt}
+
+%% style
+%% preliminary, just roman pagination + empty header
+\fancypagestyle{preliminary}{
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyhead[RCL]{}
+
+    \pagenumbering{Roman}
+}
 
 %% chapter/classic text style
 \fancypagestyle{chapter}{
   %% title of the chapter, left header, no uppercase, 10 pt, italics, no bold
-  \fancyhead[L]{Group \# 15}
-  \fancyhead[R]{Page~\thepage~of~\pageref{LastPage}}
+  \fancyhead[L]{\normalfont\itshape\fontsize{10pt}{12pt}\selectfont\nouppercase{\leftmark}}
+  \fancyhead[R]{Group \# 15}
 
   \fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
@@ -20,18 +50,29 @@
 %% define length and scaling for baseline
 \newcommand{\headingBaseline}{12}
 \newcommand{\headingBaselineDiv}{10}
+\newlength{\chapterFontSize}
 \newlength{\sectionFontSize}
 \newlength{\subsectionFontSize}
+\newlength{\chapterBaseline}
 \newlength{\sectionBaseline}
 \newlength{\subsectionBaseline}
 
 %% change those value if you want to change the chapter/section/subsection font size
+\setlength{\chapterFontSize}{14pt}
 \setlength{\sectionFontSize}{12pt}
 \setlength{\subsectionFontSize}{12pt}
 
 %% automatic computation for baseline, rule of thumb is 1.2
+\setlength{\chapterBaseline}{ \chapterFontSize * \headingBaseline / \headingBaselineDiv}
 \setlength{\sectionBaseline}{ \sectionFontSize * \headingBaseline / \headingBaselineDiv}
 \setlength{\subsectionBaseline}{ \subsectionFontSize * \headingBaseline / \headingBaselineDiv}
+
+%% headings
+%% Chapter, 14-point, bold, capitalised initial letter,
+\titleformat{\chapter}[display]
+    {\normalfont\bfseries\fontsize{\chapterFontSize}{\chapterBaseline}\selectfont}{\chaptertitlename\ \thechapter}{14pt}{\capitalisewords}
+%% left|above|below
+\titlespacing{\chapter}{0pt}{10pt}{25pt}
 
 %% Section, 12-point
 \titleformat{\section}[hang]
@@ -45,13 +86,62 @@
 %% left|above|below
 \titlespacing{\subsection}{0pt}{20pt}{10pt}
 
+%% table of content
+\renewcommand{\contentsname}{Table of Contents}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+
+%% init gloassaries
+%% noidx cause otherwise we have to do a normal glossary, compile, then remove it so it is cached
+%% because we only use acronym
+% \makenoidxglossaries
+
+%% bibliography config
+%% https://tex.stackexchange.com/a/6977
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
+\addbibresource{Appendices/bibliography.bib}
+
 %% hyperref setup
 \hypersetup{
   colorlinks = true,
   linkcolor = blue, % normal internal links, like ref, can be black tbh
   citecolor = blue, % bibliographical links
-  urlcolor = blue,  % linked urls
+  urlcolor = blue, % linked urls
   filecolor = black % url which open local files
 }
 
-\setstretch{1.1}
+%% modified reference function
+%% https://tex.stackexchange.com/a/438998
+\newcommand\eref[1]{equation~(\ref{#1})}
+\newcommand\tref[1]{table~\ref{#1}}
+\newcommand\fref[1]{figure~\ref{#1}}
+
+%% line spacing
+\setstretch{1.5}
+
+%% prefer same space width
+% \RaggedRight
+
+%% hyphenation
+\hyphenpenalty = 100       % 控制断字频率（值越低越积极断字）
+\exhyphenpenalty = 50      % 对已包含连字符单词的断字控制
+\tolerance = 1000          % 允许更大的行内间距变化
+\emergencystretch = 3em    % 允许临时拉伸空间避免溢出
+
+%% enable package ``minted''
+\setminted{
+    breaklines=true,          % 自动换行
+    breaksymbolleft=,         % 移除换行箭头符号（节省空间）
+    baselinestretch=0.9,      % 行距压缩到小于1的值
+    fontsize=\footnotesize,   % 使用更小的字号
+    frame=leftline,           % 仅保留左侧竖线（节省空间）
+    framesep=2pt,             % 边框间距压缩到2pt
+    rulecolor=gray!30,        % 浅灰色边框（更低调）
+    autogobble=true,          % 自动对齐代码缩进
+    xleftmargin=5pt,          % 左侧缩进减少
+    xrightmargin=0pt,         % 右侧无缩进
+    numbersep=3pt,            % 行号间距减少
+    linenos=true,             % 关闭行号（节省空间）
+    bgcolor=white,            % 白色背景（移除灰色背景节省视觉空间）
+}

@@ -1,0 +1,53 @@
+%! Author = yilin
+
+\documentclass[12pt,a4paper]{report}
+
+\input{I-texes/I-packages}
+\input{I-texes/I-config}
+\input{I-texes/I-info}
+\input{I-texes/I-glossary}
+\input{I-texes/I-packages-2} % some package need to be loaded last in preamble
+
+\begin{document}
+
+%% enable package ``minitoc''
+% \dominitoc
+
+\pagestyle{empty}
+\input{Preliminaries/titlepage}
+\clearpage
+
+\pagestyle{preliminary}
+\input{Preliminaries/abstract}
+\clearpage
+{
+  \setstretch{1}
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+  %% this is to include all acronym
+  %% You can do a sort of citation for acronym and include only the one you use,
+  %% Look at the glossary package for details.
+  % \glsaddall
+  % \printnoidxglossary[type=\acronymtype, title=Glossary] % optional
+}
+\clearpage
+
+\pagestyle{chapter}
+\subfile{Chapters/1_introduction}
+\subfile{Chapters/2_background}
+\subfile{Chapters/3_method}
+\subfile{Chapters/4_results}
+\subfile{Chapters/5_conclusions}
+
+\printbibliography[title={References}, heading=bibintoc, resetnumbers=true]
+%% sorted by alphabetical order, using author name
+\begin{refsection}
+\DeclareFieldFormat{labelnumberwidth}{#1}
+\nocite{*}
+\printbibliography[title={Bibliography}, notcategory=cited, omitnumbers=true, heading=bibintoc]
+\end{refsection}
+
+\appendix
+\subfile{Appendices/appendix}
+
+\end{document}
