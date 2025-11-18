@@ -2,7 +2,7 @@
 
 ---
 
-## Lab Report
+## Group Robotics
 It's a latex structure for an OUC-HW robotics lab report
 (Uses [GitHub](https://github.com/jackred/Heriot_Watt_Thesis_Template) Thesis).
 
