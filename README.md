@@ -8,6 +8,11 @@ It's a latex structure for an OUC-HW robotics lab report
 
 ---
 
+## Integrated Group Robotics
+Used **IEEEtran** latex class mainly.
+
+---
+
 ## MACS letter
 Uses Heriot-Watt MACS letter template
 (url: [Overleaf](https://cn.overleaf.com/latex/templates/heriot-watt-macs-letter-template/rshvrwfrmxxg))

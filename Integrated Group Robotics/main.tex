@@ -1,0 +1,45 @@
+\documentclass{IEEEtran}
+
+\usepackage{minted}
+\usepackage[svgnames]{xcolor}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{empheq}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+
+\setminted{
+	breaklines,
+	breakanywhere,
+	fontsize=\footnotesize,
+}
+
+\title{\LARGE \bf
+	Lab Report:
+}% <-this % stops a space
+\author{A Good Name$^{1}$. Lab group: .
+	\thanks{$^{1}$A Good Name is ...
+  	      {\tt\small your email here}
+  }
+}% <-this % stops a space
+
+\begin{document}
+
+\maketitle
+
+\input{0-sections/individual}
+\input{0-sections/team}
+\input{0-sections/words}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv, refs}
+
+\appendices
+
+\input{1-appendices/individual}
+\input{1-appendices/team}
+
+\end{document}
